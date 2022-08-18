@@ -1,0 +1,17 @@
+.site-header {
+    padding: .8rem;
+    text-align: center;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--c-yellow);
+    z-index: 100;
+
+    &__logo {
+        color: var(--c-red);
+        text-transform: uppercase;
+        letter-spacing: -0.175rem;
+        text-shadow: -.1rem .2rem .1rem var(--c-darkest);
+    }
+}

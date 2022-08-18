@@ -4,13 +4,25 @@
     flex-direction: column;
     width: calc(50% - 1rem);
     border: .2rem solid var(--c-darkest);
-    padding: .8rem;
     border-radius: 1rem;
-    background-color: var(--c-brown);
+    background-color: var(--c-blue);
     margin-bottom: 2rem;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
 
     @media screen and (min-width: 768px) {
         width: calc(33.333% - 1rem);
+    }
+
+    &:hover{
+        box-shadow: 0 0 1rem 0.4rem rgba(0,0,0,0.3);
+        transform: scale(1.01);
+    }
+
+    &__content {
+        padding: .8rem;
+        display: flex;
+        flex-direction: column;
     }
 
     &__num {
@@ -23,7 +35,8 @@
         height: 3rem;
         width: 3rem;
         border: .2rem solid var(--c-lightest);
-        background-color: var(--c-brown);
+        background-color: var(--c-red);
+        color: var(--c-lightest);
         border-radius: 100%;
         font-size: 1.2rem;
         z-index: 10;
@@ -38,14 +51,66 @@
         border: 2px solid var(--c-darkest);
         border-radius: 1rem 1rem 0 0;
         background-color: var(--c-lightest);
+        margin-bottom: 1.2rem;
+        overflow: hidden;
 
         img {
             position: absolute;
-            top: 0;
+            top: 2rem;
             left: 0;
-            height: 100%;
+            height: calc(100% - 2rem);
             width: 100%;
             object-fit: contain;
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    &__extra {
+        font-size: 1.8rem;
+        display: block;
+        font-size: 1.6rem;
+        &:not(:last-child) {
+            margin-bottom: .4rem;
+        }
+
+    }
+
+    &__btn {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin-top: auto;
+        border-top: .2rem solid var(--c-darkest);
+        padding: .8rem;
+        color: var(--c-darkest);
+        text-decoration: none;
+        font-weight: 500;
+        overflow: hidden;
+        transition: var(--c-darkest);
+        z-index: 1;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--c-red);
+            transition: all .3s ease-in-out;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: var(--c-lightest);
+            &:after {
+                left: 0;
+            }
         }
     }
 }

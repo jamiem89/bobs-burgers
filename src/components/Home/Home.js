@@ -1,10 +1,11 @@
+import Header from '../Header/Header';
 import CharacterList from '../CharacterList/CharacterList';
 
 const Home = (props) => {
 
     return (
         <div className="home">
-            <h1>This is the homepage, and data has loaded</h1>
+            <Header />
             <CharacterList characters={props.characters}/>
         </div>
      );
