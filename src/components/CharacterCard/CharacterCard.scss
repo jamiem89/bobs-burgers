@@ -1,0 +1,51 @@
+.character-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 1rem);
+    border: .2rem solid var(--c-darkest);
+    padding: .8rem;
+    border-radius: 1rem;
+    background-color: var(--c-brown);
+    margin-bottom: 2rem;
+
+    @media screen and (min-width: 768px) {
+        width: calc(33.333% - 1rem);
+    }
+
+    &__num {
+        position: absolute;
+        top: .4rem;
+        right: .4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        border: .2rem solid var(--c-lightest);
+        background-color: var(--c-brown);
+        border-radius: 100%;
+        font-size: 1.2rem;
+        z-index: 10;
+        font-weight: 700;
+
+    }
+
+    &__img {
+        position: relative;
+        width: 100%;
+        padding-top: 62.5%;
+        border: 2px solid var(--c-darkest);
+        border-radius: 1rem 1rem 0 0;
+        background-color: var(--c-lightest);
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}
