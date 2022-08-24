@@ -2,13 +2,17 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: calc(50% - 1rem);
+    width: 100%;
     border: .2rem solid var(--c-darkest);
     border-radius: 1rem;
     background-color: var(--c-blue);
     margin-bottom: 2rem;
     overflow: hidden;
     transition: all .3s ease-in-out;
+
+    @media screen and (min-width: 480px) {
+        width: calc(50% - 1rem);
+    }
 
     @media screen and (min-width: 768px) {
         width: calc(33.333% - 1rem);

@@ -21,7 +21,7 @@ function App() {
     },[])
 
     return (<>
-        <div className="App">
+        <div className="app">
             {!fetchedData && <Loading /> }
             {fetchedData && <Home characters={charList} /> }
         </div>
