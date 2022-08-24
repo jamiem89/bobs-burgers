@@ -8,7 +8,7 @@ const CharacterCard = (props) => {
                     {props.info.id}
                 </div>
                 <div className="character-card__img">
-                    <img src={props.info.image} alt="" />
+                    <img src={props.info.image} alt="" loading="lazy"/>
                 </div>
                 <div className="character-card__info">
                     <h3 className="character-card__title">{props.info.name}</h3>

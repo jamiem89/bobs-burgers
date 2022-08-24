@@ -5,8 +5,7 @@ const Home = (props) => {
 
     return (
         <div className="home">
-            <Header />
-            <CharacterList characters={props.characters}/>
+            <CharacterList characters={props.characters} searchTerm={props.searchTerm}/>
         </div>
      );
 }

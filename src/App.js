@@ -1,15 +1,18 @@
 import {useState, useEffect} from 'react';
 import './App.scss';
 import Loading from './components/Loading/Loading'
+import Header from './components/Header/Header'
 import Home from './components/Home/Home'
 
 function App() {
 
     const [charList, setCharList] = useState([]);
     const [fetchedData, setFetchedData] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+
 
     useEffect(() => {
-        fetch('https://bobsburgers-api.herokuapp.com/characters/1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30')
+        fetch('https://bobsburgers-api.herokuapp.com/characters/')
         .then((res) => {
             return res.json();
         })
@@ -23,7 +26,12 @@ function App() {
     return (<>
         <div className="app">
             {!fetchedData && <Loading /> }
-            {fetchedData && <Home characters={charList} /> }
+            {fetchedData && (
+                <>
+                    <Header setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
+                    <Home characters={charList} searchTerm={searchTerm} />
+                </>
+            )}
         </div>
         </>);
 }

@@ -1,8 +1,10 @@
 .site-header {
-    padding: .8rem;
-    text-align: center;
+    padding: .8rem 1rem;
     width: 100vw;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     top: 0;
     left: 0;
     background-color: var(--c-yellow);
@@ -13,5 +15,32 @@
         text-transform: uppercase;
         letter-spacing: -0.175rem;
         text-shadow: -.1rem .2rem .1rem var(--c-darkest);
+    }
+
+    form {
+        position: relative;
+
+        input {
+            border: .1rem solid var(--c-darkest);
+            padding: .8rem 3rem .8rem .8rem;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            svg {
+                max-width: 80%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 1rem 3rem;
     }
 }
